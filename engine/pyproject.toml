@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pawpulse-engine"
+version = "0.1.0"
+description = "PawPulse Pet Health Anomaly Detection Engine — baseline learning, anomaly detection, trend prediction"
+authors = [{name = "PawPulse AI/ML Team"}]
+license = {text = "Proprietary"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.10",
+    "scikit-learn>=1.3",
+    "statsmodels>=0.14",
+]
+
+[project.scripts]
+pawpulse-check = "pawpulse_ml.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["pawpulse_ml*"]
